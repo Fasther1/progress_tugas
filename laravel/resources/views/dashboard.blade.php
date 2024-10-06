@@ -19,9 +19,9 @@
                         <p class="text-lg mb-6">
                             Welcome back! Explore the latest updates and manage your account settings here.
                         </p>
-                        <button class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300 ease-in-out transform hover:scale-110 shadow-md">
+                        <a href="{{ route('dashboard.explore') }}" class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300 ease-in-out transform hover:scale-110 shadow-md">
                             Explore Dashboard
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -32,17 +32,17 @@
                     </h4>
                     <ul class="space-y-4">
                         <li>
-                            <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                            <a href="{{ route('reports.index') }}" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">
                                 {{ __('View Reports') }}
                             </a>
                         </li>
                         <li>
-                            <a href="profile" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                            <a href="{{ route('profile.edit') }}" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">
                                 {{ __('Account Settings') }}
                             </a>
                         </li>
                         <li>
-                            <a href="support" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                            <a href="{{ route('support.index') }}" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">
                                 {{ __('Support') }}
                             </a>
                         </li>
