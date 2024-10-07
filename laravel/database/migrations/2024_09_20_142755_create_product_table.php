@@ -11,10 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+       Schema::create('product', function (Blueprint $table) {
+    $table->id();
+
+    $table->string('garry');
+    $table->string('unit');
+    $table->string('type');
+    $table->string('information');
+    $table->integer('100000');
+
+    $table->timestamps();
+});
+
     }
 
     /**
