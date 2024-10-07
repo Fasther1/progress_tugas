@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name'); // Mengubah 'garry' menjadi 'name'
+            $table->string('name'); 
             $table->string('unit'); 
             $table->string('type'); 
-            $table->text('information'); // Mengubah menjadi 'text' untuk informasi yang lebih panjang
-            $table->decimal('price', 10, 2); // Mengubah '100000' menjadi 'price' dengan tipe decimal
+            $table->text('information'); 
+            $table->decimal('price', 10, 2); 
 
             $table->timestamps();
         });
