@@ -31,7 +31,7 @@ class ProductController extends Controller
 
 
         // Jika tidak ada parameter ‘search’, langsung ambil produk dengan paginasi
-        $products = $query->paginate(2);
+        $products = $query->paginate(10);
 
 
       return view("master-data.product-master.index-product", compact('products'));// Mengarahkan ke product.blade.php
@@ -145,5 +145,14 @@ class ProductController extends Controller
     {
         return Excel::download(new ProductsExport, 'product.xlsx');
     }
+
+    public function exportPDF()
+    {
+        $products = Product::all();
+        $mpdf = new \Mpdf\Mpdf();
+        $html = view('pdf.products', compact('products'))->render(); 
+        $mpdf->WriteHTML($html);
+        $mpdf->Output('product.pdf', 'D');
+   }
 
 }

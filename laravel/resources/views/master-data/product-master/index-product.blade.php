@@ -18,6 +18,12 @@
         </button>
       </a>
 
+      <a href="{{ route('product-export-pdf') }}">
+        <button class="px-6 py-4 text-white bg-green-500 border border-green-500 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 mb-6">
+          Export to PDF
+        </button>
+      </a>
+
       <table class="min-w-full border border-collapse border-gray-200">
         <thead>
           <tr class="bg-gray-100">
@@ -54,9 +60,9 @@
 <tr class="bg-white">
     <td class="border border-gray-200 px-4 py-2">{{ $product->id }}</td>
     <td class="border border-gray-200 px-4 py-2 hover:text-blue-500 hover:underline">
-        <a href="{{ route('product-detail', $product->id) }}">
-            {{ $product->product_name }}
-        </a>
+    <a href="{{ route('product-detail', $product->id) }}">
+    {{ $product->product_name }}
+</a>
     </td>
     <td class="border border-gray-200 px-4 py-2">{{ $product->unit }}</td>
 </tr>
