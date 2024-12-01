@@ -62,7 +62,7 @@ class ProductController extends Controller
         'information'=> 'nullable|string',
         'qty' => 'required|integer',
         'producer'=> 'required|string|max:255',
-        'supplier_id' => 'required|exists:suppliers,id',
+        
         
         ]);
 
