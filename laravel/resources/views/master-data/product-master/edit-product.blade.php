@@ -45,6 +45,7 @@
                                 </select>
                             </div>
 
+                           
                             <div class="mb-4">
                                 <label for="type" class="block font-medium text-gray-700">Type:</label>
                                 <input type="text" id="type" name="type" value="{{ old('type', $product->type) }}" required class="w-full p-2 mt-2 border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">

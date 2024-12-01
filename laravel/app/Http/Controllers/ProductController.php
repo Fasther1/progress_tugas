@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ProductsExport;
+use App\Models\Supplier;
+
 
 
 class ProductController extends Controller
@@ -15,7 +17,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Product::query();
+        $query = Product::with('supplier');
 
 
         // Cek apakah ada parameter 'search' di request
@@ -32,6 +34,7 @@ class ProductController extends Controller
 
         // Jika tidak ada parameter ‘search’, langsung ambil produk dengan paginasi
         $products = $query->paginate(10);
+        //return $products;
 
 
       return view("master-data.product-master.index-product", compact('products'));// Mengarahkan ke product.blade.php
@@ -42,7 +45,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('master-data.product-master.create-product'); // Tampilkan form untuk membuat produk baru
+        $suppliers = Supplier::all(); 
+        return view("master-data.product-master.create-product", compact('suppliers'));
+        
     }
 
     /**
@@ -57,6 +62,8 @@ class ProductController extends Controller
         'information'=> 'nullable|string',
         'qty' => 'required|integer',
         'producer'=> 'required|string|max:255',
+        'supplier_id' => 'required|exists:suppliers,id',
+        
         ]);
 
         Product::create($validasi_data);

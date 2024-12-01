@@ -29,8 +29,12 @@
                                     <option value="ltr">Liter (ltr)</option>
                                     <option value="pcs">Pieces (pcs)</option>
                                     <option value="box">Box</option>
+
+                                   
                                 </select>
                             </div>
+
+                           
                
                             <div class="form-group">
                                 <label for="type" class="block text-sm font-medium text-gray-700">Type</label>
